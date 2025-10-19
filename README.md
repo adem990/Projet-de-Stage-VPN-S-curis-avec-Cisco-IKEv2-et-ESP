@@ -1,85 +1,89 @@
-🔒 Projet de Stage – VPN Sécurisé avec Cisco, IKEv2 et ESP
+# 🔒 Projet de Stage – VPN Sécurisé avec Cisco, IKEv2 et ESP
 
+[![Stage](https://img.shields.io/badge/Stage-2024%2F2025-blue)](https://www.sii.tn)  
+[![Technologies](https://img.shields.io/badge/Technologies-Cisco%20%7C%20GNS3%20%7C%20Wireshark-blueviolet)]  
+[![Licence](https://img.shields.io/badge/Licence-Propre-brightgreen)]  
 
-[
-]
-[
-]
+---
 
-📌 Présentation du Projet
+## 📌 Présentation du Projet
 
-Ce projet a pour objectif la conception, configuration et analyse d’un tunnel VPN sécurisé entre deux sites distants, utilisant :
+Ce projet a pour objectif la **conception, configuration et analyse d’un tunnel VPN sécurisé** entre deux sites distants, utilisant :  
 
-IPsec avec IKEv2 et ESP
+- **IPsec avec IKEv2 et ESP**  
+- **Routeurs Cisco**  
+- **GNS3 pour la simulation réseau**  
+- **Wireshark pour l’analyse et la validation de sécurité**  
 
-Routeurs Cisco
+Réalisé dans le cadre d’un stage chez **S.I.I (Service d’Intelligence Informatique)**, il démontre l’application concrète des concepts de réseaux et cybersécurité dans un environnement professionnel.
 
-GNS3 pour la simulation réseau
+---
 
-Wireshark pour l’analyse et la validation de sécurité
+## 🎯 Objectifs
 
-Réalisé dans le cadre d’un stage chez S.I.I (Service d’Intelligence Informatique), il démontre l’application concrète des concepts de réseaux et cybersécurité dans un environnement professionnel.
+1. Comprendre les concepts de **VPN et protocoles de sécurité**.  
+2. Configurer un **tunnel VPN sécurisé** sur routeurs Cisco.  
+3. Tester le tunnel via **GNS3 et commandes Cisco**.  
+4. Vérifier le trafic VPN avec **Wireshark** :  
+   - Authentification des pairs (IKEv2)  
+   - Chiffrement des données (ESP)  
+5. Développer des compétences pratiques avancées en **réseaux et cybersécurité**.
 
-🎯 Objectifs
+---
 
-Comprendre les concepts de VPN et protocoles de sécurité.
+## 🛠️ Technologies et Outils
 
-Configurer un tunnel VPN sécurisé sur routeurs Cisco.
+| Catégorie         | Technologie / Outil             |
+|------------------|--------------------------------|
+| Routeurs          | Cisco IOS                      |
+| VPN               | IPsec, IKEv2, ESP              |
+| Simulation Réseau | GNS3                           |
+| Analyse Réseau    | Wireshark                      |
+| Documentation     | UML, PDF                       |
 
-Tester le tunnel via GNS3 et commandes Cisco.
+---
 
-Vérifier le trafic VPN avec Wireshark :
+## 📂 Structure du Projet
 
-Authentification des pairs (IKEv2)
-
-Chiffrement des données (ESP)
-
-Développer des compétences pratiques avancées en réseaux et cybersécurité.
-
-🛠️ Technologies et Outils
-Catégorie	Technologie / Outil
-Routeurs	Cisco IOS
-VPN	IPsec, IKEv2, ESP
-Simulation Réseau	GNS3
-Analyse Réseau	Wireshark
-Documentation	UML, PDF
-📂 Structure du Projet
 VPN-Stage/
 │
 ├─ Configurations/
-│   ├─ Router1.cfg         # Configuration routeur 1
-│   ├─ Router2.cfg         # Configuration routeur 2
+│ ├─ Router1.cfg # Configuration routeur 1
+│ ├─ Router2.cfg # Configuration routeur 2
 │
 ├─ Wireshark/
-│   ├─ Capture_Figure2.png # Vérification IKEv2 SA
-│   ├─ Capture_Figure3.png # Paquet chiffré ESP
-│   ├─ Capture_Figure4.png # Capture complète Wireshark
+│ ├─ Capture_Figure2.png # Vérification IKEv2 SA
+│ ├─ Capture_Figure3.png # Paquet chiffré ESP
+│ ├─ Capture_Figure4.png # Capture complète Wireshark
 │
 ├─ Documentation/
-│   ├─ Rapport_Stage.pdf   # Rapport complet du stage
-│   ├─ Diagrammes_UML.pdf  # Schémas réseau et diagrammes
+│ ├─ Rapport_Stage.pdf # Rapport complet du stage
+│ ├─ Diagrammes_UML.pdf # Schémas réseau et diagrammes
 │
 └─ README.md
 
-🚀 Instructions d’Exécution
-1. Préparer l’environnement
+yaml
+Copier le code
 
-Installer GNS3 et créer une topologie avec deux routeurs Cisco.
+---
 
-Importer les configurations Router1.cfg et Router2.cfg.
+## 🚀 Instructions d’Exécution
 
-2. Vérifier le VPN
+### 1. Préparer l’environnement
+- Installer **GNS3** et créer une topologie avec deux routeurs Cisco.  
+- Importer les configurations `Router1.cfg` et `Router2.cfg`.
 
-Depuis chaque routeur, exécuter :
-
+### 2. Vérifier le VPN
+- Depuis chaque routeur, exécuter :  
+```bash
 show crypto ikev2 sa
 show crypto ipsec sa
-
-
 Confirmer que le tunnel VPN est actif.
 
-3. Analyser le trafic avec Wireshark
+3. Tests de Connectivité
+Utiliser ping pour vérifier la communication entre les réseaux internes des deux sites via le tunnel VPN.
 
+4. Analyser le trafic avec Wireshark
 Lancer une capture sur le réseau VPN.
 
 Filtrer les paquets :
@@ -88,38 +92,59 @@ IKEv2 : udp.port == 500
 
 ESP : esp
 
-Vérifier le chiffrement et l’authentification.
+Vérifier que les paquets sont chiffrés et que l’authentification est valide.
 
 📷 Figures et Captures
 Figure 2 – Vérification de crypto ikev2 sa
 
-
-Cette figure montre la négociation IKEv2 et l’authentification réussie entre les routeurs.
+Montre la négociation IKEv2 et l’authentification réussie entre les routeurs.
 
 Figure 3 – Paquet ESP chiffré
-
 
 Les paquets apparaissent chiffrés, confirmant la confidentialité des données en transit.
 
 Figure 4 – Capture complète Wireshark
 
-
 Illustration globale du trafic VPN sécurisé entre les deux sites.
 
 ✅ Résultats Attendus
-
 Tunnel VPN opérationnel et sécurisé.
 
 Authentification IKEv2 confirmée.
 
 Trafic chiffré ESP vérifié.
 
+Communication stable entre les réseaux locaux.
+
 Documentation complète et analyse de trafic validée.
 
 📚 Références
-
 Cisco IPsec & IKEv2 Documentation
 
 Wireshark User Guide
 
 GNS3 Network Simulation
+
+⚡ Conseils pour Valoriser le Projet
+Ajouter des captures d’écran Wireshark avec paquets chiffrés.
+
+Inclure un diagramme UML ou ASCII de la topologie réseau.
+
+Mettre en avant les tests de connectivité et sécurité.
+
+Souligner la maîtrise des outils professionnels (Cisco, GNS3, Wireshark).
+
+yaml
+Copier le code
+
+---
+
+Si vous voulez, je peux créer **une version encore plus avancée “GitHub Ready”**, avec :  
+
+- Diagramme ASCII de la topologie réseau directement dans le README  
+- Exemples de commandes Cisco et sorties formatées  
+- Section “Exécution rapide” pour tester le VPN  
+
+Cela rendrait votre README très professionnel et visuel.  
+
+Voulez-vous que je fasse cette version ?
