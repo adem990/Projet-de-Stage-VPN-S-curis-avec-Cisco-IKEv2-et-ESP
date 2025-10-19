@@ -125,26 +125,5 @@ Wireshark User Guide
 
 GNS3 Network Simulation
 
-⚡ Conseils pour Valoriser le Projet
-Ajouter des captures d’écran Wireshark avec paquets chiffrés.
 
-Inclure un diagramme UML ou ASCII de la topologie réseau.
 
-Mettre en avant les tests de connectivité et sécurité.
-
-Souligner la maîtrise des outils professionnels (Cisco, GNS3, Wireshark).
-
-yaml
-Copier le code
-
----
-
-Si vous voulez, je peux créer **une version encore plus avancée “GitHub Ready”**, avec :  
-
-- Diagramme ASCII de la topologie réseau directement dans le README  
-- Exemples de commandes Cisco et sorties formatées  
-- Section “Exécution rapide” pour tester le VPN  
-
-Cela rendrait votre README très professionnel et visuel.  
-
-Voulez-vous que je fasse cette version ?
